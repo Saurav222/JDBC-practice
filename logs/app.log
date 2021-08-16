@@ -4,3 +4,9 @@
 2021-08-16 15:21:58,268 DEBUG j.JDBCDemo [main] 5 asia
 2021-08-16 15:21:58,269 DEBUG j.JDBCDemo [main] 1 Europe
 2021-08-16 15:21:58,269 DEBUG j.JDBCDemo [main] 4 Middle East and Africa
+2021-08-16 15:26:13,310 DEBUG j.JDBCDemo [main] [Americas, Asia, asia]
+2021-08-16 15:26:13,316 DEBUG j.JDBCDemo [main] 2 Americas
+2021-08-16 15:26:13,316 DEBUG j.JDBCDemo [main] 3 Asia
+2021-08-16 15:26:13,316 DEBUG j.JDBCDemo [main] 5 asia
+2021-08-16 15:26:13,316 DEBUG j.JDBCDemo [main] 1 Europe
+2021-08-16 15:26:13,317 DEBUG j.JDBCDemo [main] 4 Middle East and Africa

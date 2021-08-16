@@ -7,12 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class JDBCDemo {
-	private static Logger logger = LogManager.getLogger(JDBCDemo.class);
+	private static Logger logger = LoggerFactory.getLogger(JDBCDemo.class);
 	public static void main(String[] args) {
 		String DB_URL = "jdbc:mysql://localhost/practice";
 		String DB_USER = "root";
@@ -25,7 +25,7 @@ public class JDBCDemo {
 //			update(statement);
 //			delete(statement);
 			List<String> regions = retrieveWithCondition(statement, "A");
-			logger.debug(regions);
+			logger.debug(regions.toString());
 			sort(statement);
 		} catch (SQLException e) {
 			e.printStackTrace();
