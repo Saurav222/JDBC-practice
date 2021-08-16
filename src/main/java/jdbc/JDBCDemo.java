@@ -7,9 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class JDBCDemo {
+	private static Logger logger = LogManager.getLogger(JDBCDemo.class);
 	public static void main(String[] args) {
 		String DB_URL = "jdbc:mysql://localhost/practice";
 		String DB_USER = "root";
@@ -22,8 +25,16 @@ public class JDBCDemo {
 //			update(statement);
 //			delete(statement);
 			List<String> regions = retrieveWithCondition(statement, "A");
+			logger.debug(regions);
+			sort(statement);
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}
+	}
+	private static void sort(Statement statement) throws SQLException {
+		ResultSet resultSet = statement.executeQuery("SELECT * FROM REGIONS ORDER BY REGION_NAME");
+		while (resultSet.next()) {
+			logger.debug(resultSet.getInt(1) + " "+ resultSet.getNString("REGION_NAME"));
 		}
 	}
 
